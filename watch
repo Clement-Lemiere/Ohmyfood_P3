@@ -340,13 +340,11 @@ template {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   list-style: none;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  counter-reset: listcount;
 }
 
 a {
@@ -356,40 +354,31 @@ a {
 
 h1 {
   font-size: 1.5em;
-  font-weight: 900;
 }
 
 h2 {
   padding-top: 40px;
-  font-weight: 900;
-  padding-bottom: 10px;
 }
 
 .bold {
-  font-weight: 900;
+  font-weight: bold;
 }
 
 .center {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
 }
 
 .grey_BG {
-  width: 100%;
   background-color: rgba(242, 242, 242, 0.9490196078);
   padding-bottom: 50px;
 }
 
 .header_logo {
   font-family: "Shrikhand", cursive;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
   font-size: 30px;
-  padding: 20px 0 10px;
+  padding: 20px 0 10px 0;
 }
 
 .logo {
@@ -400,16 +389,14 @@ h2 {
 
 .location_bar {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  background-color: rgb(231, 231, 231);
-  padding: 10px 0px 10px 70px;
+  background-color: lightgray;
+  padding: 10px 0px;
   justify-content: center;
-  overflow: hidden;
 }
 
 .location_textzone {
-  background-color: rgb(231, 231, 231);
+  background-color: lightgrey;
   border: none;
   font-weight: bold;
   padding-left: 10px;
@@ -417,9 +404,7 @@ h2 {
 
 .title_dim {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   margin: 30px 20px 40px;
 }
 
@@ -436,18 +421,19 @@ h2 {
 #fonctionnement {
   padding: 20px;
 }
+
 #fonctionnement li {
   position: relative;
   padding: 25px;
   border: 1px black;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: rgba(242, 242, 242, 0.9490196078);
-  box-shadow: 3px 3px 10px rgba(36, 36, 36, 0.192);
+  box-shadow: 3px 3px 8px rgba(23, 23, 23, 0.3);
   margin: 20px 10px;
 }
+
 #fonctionnement li::before {
-  counter-increment: listcount 1;
-  content: counter(listcount) "";
+  content: "1";
   background-color: #9356DC;
   color: #fff;
   width: 25px;
@@ -464,7 +450,6 @@ h2 {
 
 .restaurants {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   padding: 20px;
 }
@@ -482,8 +467,9 @@ h2 {
 .card_shape {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 150px;
 }
+
 .card_shape img {
   width: 100%;
   height: 100%;
@@ -492,59 +478,29 @@ h2 {
 
 .card_description {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   padding: 0 10px;
-}
-
-.card_text {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 10px 5px;
 }
 
 .favorite {
   display: flex;
   flex-wrap: wrap;
-  background-color: #fff;
-  border: none;
-  font-size: 25px;
-}
-
-.new {
-  position: absolute;
-  background-color: #99E2D0;
-  color: rgb(0, 104, 104);
-  padding: 5px;
-  margin-left: 65%;
-  margin-top: 5%;
-  border-radius: 2px;
+  justify-content: flex-end;
 }
 
 footer {
-  background-color: rgba(44, 44, 44, 0.9490196078);
-  padding: 20px;
-  font-size: 0.8em;
+  background-color: black;
+  padding-left: 20px;
 }
+
 footer i {
   color: white;
-  margin-right: 5px;
-  width: 13px;
 }
+
 footer span {
   color: white;
 }
 
-.footer_space {
-  padding-top: 15px;
-}
-.footer_space li {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding-top: 8px;
-}
-
 /*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=watch.map */

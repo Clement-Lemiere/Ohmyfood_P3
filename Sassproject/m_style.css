@@ -337,6 +337,7 @@ template {
   display: none;
 }
 
+/* --- all --- */
 * {
   margin: 0;
   padding: 0;
@@ -346,7 +347,7 @@ template {
 
 body {
   font-family: "Roboto", sans-serif;
-  counter-reset: listcount;
+  font-size: 0.8em;
 }
 
 a {
@@ -355,39 +356,29 @@ a {
 }
 
 h1 {
-  font-size: 1.5em;
-  font-weight: 900;
-}
-
-h2 {
-  padding-top: 40px;
-  font-weight: 900;
-  padding-bottom: 10px;
-}
-
-.bold {
-  font-weight: 900;
-}
-
-.center {
+  font-family: "Shrikhand", cursive;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+}
+h1 i {
+  padding-right: 20px;
 }
 
-.grey_BG {
-  width: 100%;
-  background-color: rgba(242, 242, 242, 0.9490196078);
-  padding-bottom: 50px;
+/* --- header --- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px 10px;
+}
+header i {
+  margin-right: 60px;
+  font-size: 25px;
 }
 
 .header_logo {
   font-family: "Shrikhand", cursive;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
   font-size: 30px;
   padding: 20px 0 10px;
 }
@@ -398,32 +389,64 @@ h2 {
   padding: 10px 0;
 }
 
-.location_bar {
+/* --- main --- */
+img {
+  width: 100%;
+}
+
+.menu_bg {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: -50px;
+  position: relative;
+}
+.menu_bg li {
+  position: relative;
+  padding: 15px;
+  border: 1px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 3px 3px 8px rgba(23, 23, 23, 0.3);
+  margin: 20px 10px;
+}
+
+h2 {
+  text-transform: uppercase;
+  border-bottom: solid #99E2D0;
+  width: 55px;
+  font-weight: 300;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+
+h3 {
+  padding-bottom: 5px;
+}
+
+.space_b {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  background-color: rgb(231, 231, 231);
-  padding: 10px 0px 10px 70px;
-  justify-content: center;
-  overflow: hidden;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.location_textzone {
-  background-color: rgb(231, 231, 231);
-  border: none;
-  font-weight: bold;
-  padding-left: 10px;
+.price {
+  font-weight: 900;
 }
 
-.title_dim {
+.order {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: flex-end;
-  margin: 30px 20px 40px;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 40px;
 }
 
-.search_button {
+.order_button {
+  width: 45%;
   border: transparent;
   border-radius: 30px;
   padding: 15px;
@@ -433,97 +456,9 @@ h2 {
   background-image: linear-gradient(-5deg, #9356DC, #FF79DA);
 }
 
-#fonctionnement {
-  padding: 20px;
-}
-#fonctionnement li {
-  position: relative;
-  padding: 25px;
-  border: 1px black;
-  border-radius: 20px;
-  background-color: rgba(242, 242, 242, 0.9490196078);
-  box-shadow: 3px 3px 10px rgba(36, 36, 36, 0.192);
-  margin: 20px 10px;
-}
-#fonctionnement li::before {
-  counter-increment: listcount 1;
-  content: counter(listcount) "";
-  background-color: #9356DC;
-  color: #fff;
-  width: 25px;
-  height: 25px;
-  border-radius: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 20px;
-  left: -15px;
-}
-
-.restaurants {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.cards_frame {
-  border: transparent;
-  background-color: white;
-  display: block;
-  border-radius: 20px;
-  box-shadow: 3px 3px 8px rgba(23, 23, 23, 0.3);
-  overflow: hidden;
-  margin: 10px 0;
-}
-
-.card_shape {
-  display: block;
-  width: 100%;
-  height: 200px;
-}
-.card_shape img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card_description {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.card_text {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 10px 5px;
-}
-
-.favorite {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #fff;
-  border: none;
-  font-size: 25px;
-}
-
-.new {
-  position: absolute;
-  background-color: #99E2D0;
-  color: rgb(0, 104, 104);
-  padding: 5px;
-  margin-left: 65%;
-  margin-top: 5%;
-  border-radius: 2px;
-}
-
+/* --- footer --- */
 footer {
+  position: relative;
   background-color: rgba(44, 44, 44, 0.9490196078);
   padding: 20px;
   font-size: 0.8em;
@@ -547,4 +482,4 @@ footer span {
   padding-top: 8px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=m_style.css.map */

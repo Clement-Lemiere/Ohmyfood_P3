@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Shrikhand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/746ee301dc.js" crossorigin="anonymous"></script>
         <title>ohmyfood</title>
 
@@ -15,7 +15,7 @@
 
     <body>
         <header>
-            <a href="#" class="center">
+            <a href="#">
                 <span class="header_logo">
                     ohmyfood
                 </span>
@@ -30,20 +30,20 @@
                         </label>
                         <input type="search" name="recherche" placeholder="Paris, Belleville" class="location_textzone"/>
                     </span>
-                        <span class="center title_dim">
-                            <h1>    
-                                Réservez le menu qui vous convient
-                            </h1>
-                            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-                            
-                        </span>
+                    <div class="title_dim">
+                        <h1>    
+                            Réservez le menu qui vous convient
+                        </h1>
+                        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                        
+                    </div>
                     <input type="submit" value="Explorer nos restaurants" class="search_button"/>
                 </form>
             </section>
             
             <section id="fonctionnement">
                 <h2>Fonctionnement</h2>
-                <ul>
+                <ol>
                     <li>
                         <a href="#" title="Fonction" class="fonction_frame">
                             <i class="fa-solid fa-mobile-screen-button"></i>
@@ -51,7 +51,6 @@
                         </a>
                     </li>
                     <li>
-                        <!--<span class="pastille">1</span>-->
                         <a href="#" title="Fonction" class="Fonction_frame">
                             <i class="fa-solid fa-list-ul"></i>
                             <span class="bold">Composez votre menu</span>
@@ -63,16 +62,18 @@
                             <span class="bold">Dégustez au restaurant</span>
                         </a>
                     </li>
-                </ul>
+                </ol>
             </section>
             <section class="restaurants grey_BG">
                 <h2>Restaurants</h2>
                 <a href="" title="plats" class="cards_frame">
+                    <span class="new">Nouveau</span>
                     <span class="card_shape">
                         <img src="assets/la_palette.jpg" alt="la palette du gout"/>
                     </span>
+                    
                     <span class="card_description">
-                        <span class="card-text">
+                        <span class="card_text">
                             <span class="bold">
                                 La palette du goût
                             </span>
@@ -86,11 +87,12 @@
                     </span>
                 </a>
                 <a href="" title="plats" class="cards_frame">
+                    <span class="new">Nouveau</span>
                     <span class="card_shape">
                         <img src="assets/la_note.jpg" alt="la note enchantee"/>
                     </span>
                     <span class="card_description">
-                        <span class="card-text">
+                        <span class="card_text">
                             <span class="bold">
                                 La note enchantée
                             </span>
@@ -108,7 +110,7 @@
                         <img src="assets/la_francaise.jpg" alt="a la francaise"/>
                     </span>
                     <span class="card_description">
-                        <span class="card-text">
+                        <span class="card_text">
                             <span class="bold capital">
                                 à la francaise
                             </span>
@@ -125,7 +127,7 @@
                         <img src="assets/le_delice.jpg" alt="le délice des sens"/>
                     </span>
                     <span class="card_description">
-                        <span class="card-text">
+                        <span class="card_text">
                             <span class="bold">
                                 Le délice des sens
                             </span>
@@ -145,7 +147,7 @@
         <span class="logo">
             ohmyfood
         </span>
-        <ul>
+        <ul class="footer_space">
             <li>
                 <a href="#">
                     <i class="fa-solid fa-utensils white"></i>
@@ -160,7 +162,7 @@
             </li>
             <li>
                 <a href="#">
-                    <span class="white">légales</span>
+                    <span class="white">Mentions légales</span>
                 </a>
             </li>
             <li>

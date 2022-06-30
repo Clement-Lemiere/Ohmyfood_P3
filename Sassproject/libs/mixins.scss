@@ -6,3 +6,10 @@
     font-family: "Shrikhand", cursive;
 }
 
+@mixin dflex {
+    display: flex; flex-wrap: wrap;
+}
+
+@mixin bold {
+    font-weight: 900;
+}
