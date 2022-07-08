@@ -80,7 +80,7 @@ h2 {
     margin:30px 20px 40px;
     
 }
-.search_button {
+#search_button {
     border: transparent;
     border-radius: 30px;
     padding: 15px;
@@ -88,6 +88,12 @@ h2 {
     font-weight: bold;
     background-color: $primary;
     background-image: linear-gradient(-5deg, $primary, $secondary);
+    box-shadow: 3px 3px 10px rgba(23,23,23, 0.3);
+    cursor: pointer;
+    &:hover{
+        box-shadow: 4px 4px 10px rgba(23,23,23, 0.4);
+        filter: brightness(1.05);
+    }
 }
 
 #fonctionnement {
@@ -95,13 +101,14 @@ h2 {
     ol {
         counter-reset: listcount;
     }
-    li {
+    a {
         position: relative;
         padding: 25px;
         border-radius: 20px;
         background-color: #F2F2F2F2;
         box-shadow: 3px 3px 10px rgba(36, 36, 36, 0.192);
         margin: 20px 10px;
+        display: block;
 
         &::before {
             counter-increment: listcount;
@@ -119,15 +126,25 @@ h2 {
             top: 20px;
             left: -15px;
         }
-    }
+
         i {
             color: #2c2c2cf2;
             padding-right: 5px;
-        
-            &:hover {
+        }
+
+        &:hover {
+            background-color: lighten(#F2F2F2F2, 3%);
+            box-shadow: 5px 5px 9px rgba(36, 36, 36, 0.192);
+            transition: 0.3s background-color box-shadow;
+
+            i {
                 color: $primary;
             }
+           
         }
+
+    }
+        
 }
 .restaurants {
     @include dflex;
@@ -139,9 +156,14 @@ h2 {
     background-color: white;
     display: block;
     border-radius: 20px;
-    box-shadow: 3px 3px 8px rgba(23,23,23, 0.3);
+    box-shadow: 3px 3px 10px rgba(23,23,23, 0.3);
     overflow: hidden;
     margin: 10px 0;
+    position: relative;
+    input:hover {
+        box-shadow: 7px 7px 10px rgba(23,23,23, 0.3);
+        transition: 0.3s box-shadow;
+    }
 }
 .card_shape {
     display: block;
@@ -169,18 +191,35 @@ h2 {
     @include dflex;
     background-color: #fff;
     border: none;
-    font-size: 25px; 
+    font-size: 25px;
+    .full_heart{
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        opacity: 0;
+        color: $secondary;
+        transition: opacity 0.4s;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+.empty_heart {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    &:hover{
+        opacity: 0;
+    }
 }
 .new {
     position: absolute;
     background-color: $tertiary;
     color: rgb(0, 104, 104);
     padding: 5px;
-    margin-left: 65%;
-    margin-top: 5%;
+    right: 15px;
+    top: 20px;
     border-radius: 2px;
-
-
 }
 
 footer {
