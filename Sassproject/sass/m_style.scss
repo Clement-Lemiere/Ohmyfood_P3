@@ -1,6 +1,7 @@
 @import "../libs/normalize.scss";
 @import "../libs/mixins.scss";
 @import "../libs/variables.scss";
+@import "../libs/keyframes.scss";
                     /* --- all --- */
 * {
     margin: 0;
@@ -13,6 +14,41 @@ body {
     font-size: 0.8em;
     
 }
+.loader {
+    $animation-duration: 0.7s;
+    $animation-count: 3;
+    @include full-center;
+    position: fixed;
+    background-color: #ffffff;
+    height: 100%;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: disappear 250ms $animation-duration * $animation-count forwards;
+    transform-origin: top;
+    &::after {
+        content: "";
+        height: 130px;
+        width: 130px;
+        border-top: 5px solid $primary;
+        border-bottom: 5px solid $secondary;
+        border-radius: 50%;
+        animation: spin $animation-duration ease-in-out;
+        animation-iteration-count: $animation-count;
+    }
+}
+  
+  @keyframes disappear {
+    to {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 a {
     color: black;
     text-decoration: none;
@@ -22,8 +58,39 @@ h1 {
     @include dflex;
     justify-content: space-between;
     font-weight: 500;
-    i {
-        padding-right: 20px;
+    font-size: 30px;
+}    
+.favorite {
+    @include dflex;
+    padding-right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    position: relative;
+    cursor: pointer;
+    .empty_heart {
+        position: absolute;
+        right: 5px;
+        top: 1px;
+        &:hover{
+            opacity: 0;
+        }
+    }
+    .full_heart{
+        position: absolute;
+        right: 4px;
+        bottom: 2px;
+        font-size: 32px;
+        opacity: 0;
+        background-color: $primary;
+        background-image: linear-gradient(220deg, $primary, $secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: opacity 0.4s;
+        &:hover{
+            opacity: 1;
+        }
     }
 }
 
@@ -63,15 +130,10 @@ img {
     border-top-right-radius: 40px;
     margin-top: -50px;
     position: relative;
-    li {
-        @include dflex;
-        width: 100%;
-        
-    }
     .container {
         @include dflex;
         position: relative;
-        padding: 15px;
+        justify-content: space-between;
         border: 1px;
         border-radius: 20px;
         background-color: #fff;
@@ -79,35 +141,47 @@ img {
         margin: 20px 10px;
         cursor: pointer;
         overflow: hidden;
+        &:hover .bloc {
+            transform: translateX(-70px);
+        }
+        .bloc {
+            @include dflex;
+            position: absolute;
+            height: 67px;
+            width: 130px;
+            right: -70px;
+            transition: transform 0.4s ease-in-out; 
+            
+        }
+        .description {
+            @include dflex;
+            flex-direction: column;
+            padding: 15px;            
+        }
     }
 }
-.description {
-    @include dflex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-}
+
 input {
     display: none;
 }
 .validation {
-    @include dflex;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    padding: 30px;
-    background-color: $tertiary;
-    margin-right: -80px;
-    
+    @include full-center;
+    width:70px;
+    background-color: $tertiary;      
     i {
         background-color: #fff;
         color: $tertiary;
-        padding: 3px 3px 1px 3px;
+        @include full-center;
         border-radius: 20px;
-
+        padding: 4px 3px 1px ;        
     }
     
+}
+.price {
+    @include full-center;
+    width: 60px;
+    background-color: #fff;
+    font-weight: 900;
 }
 
 h2{
@@ -120,26 +194,21 @@ h2{
 }
 h3 {
     padding-bottom: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .space_b {
-    @include dflex;
-    flex-direction: row;
-    justify-content: space-between
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
-.price {
-    @include dflex;
-    justify-content: flex-;
-    font-weight: 900;
-}
+
 .order{
-    @include dflex;
-    flex-direction:column;
-    align-items: center;
-    margin-bottom: 25px;
-    margin-top: 40px;
-}
-.order_button {
-    width: 45%;
+    @include full-center;
+    position: relative;
+    margin: 25%;
+    width: 50%;
     border: transparent;
     border-radius: 30px;
     padding: 15px;
@@ -147,6 +216,12 @@ h3 {
     font-weight: bold;
     background-color: $primary;
     background-image: linear-gradient(-5deg, $primary, $secondary);
+    box-shadow: 3px 3px 10px rgba(23,23,23, 0.3);
+    cursor: pointer;
+    &:hover{
+        box-shadow: 4px 4px 10px rgba(23,23,23, 0.4);
+        filter: brightness(1.05);
+    }
 }
 
 

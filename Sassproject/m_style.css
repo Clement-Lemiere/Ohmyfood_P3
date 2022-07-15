@@ -337,6 +337,24 @@ template {
   display: none;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* --- all --- */
 * {
   margin: 0;
@@ -350,6 +368,41 @@ body {
   font-size: 0.8em;
 }
 
+.loader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #ffffff;
+  height: 100%;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 250ms 2.1s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: "";
+  height: 130px;
+  width: 130px;
+  border-top: 5px solid #9356DC;
+  border-bottom: 5px solid #FF79DA;
+  border-radius: 50%;
+  animation: spin 0.7s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 a {
   color: black;
   text-decoration: none;
@@ -361,9 +414,42 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-between;
   font-weight: 500;
+  font-size: 30px;
 }
-h1 i {
+
+.favorite {
+  display: flex;
+  flex-wrap: wrap;
   padding-right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.favorite .empty_heart {
+  position: absolute;
+  right: 5px;
+  top: 1px;
+}
+.favorite .empty_heart:hover {
+  opacity: 0;
+}
+.favorite .full_heart {
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  font-size: 32px;
+  opacity: 0;
+  background-color: #9356DC;
+  background-image: linear-gradient(220deg, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: opacity 0.4s;
+}
+.favorite .full_heart:hover {
+  opacity: 1;
 }
 
 /* --- header --- */
@@ -402,16 +488,11 @@ img {
   margin-top: -50px;
   position: relative;
 }
-.menu_bg li {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
 .menu_bg .container {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  padding: 15px;
+  justify-content: space-between;
   border: 1px;
   border-radius: 20px;
   background-color: #fff;
@@ -420,13 +501,23 @@ img {
   cursor: pointer;
   overflow: hidden;
 }
-
-.description {
+.menu_bg .container:hover .bloc {
+  transform: translateX(-70px);
+}
+.menu_bg .container .bloc {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  height: 67px;
+  width: 130px;
+  right: -70px;
+  transition: transform 0.4s ease-in-out;
+}
+.menu_bg .container .description {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
+  padding: 15px;
 }
 
 input {
@@ -436,19 +527,30 @@ input {
 .validation {
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
   background-color: #99E2D0;
-  margin-right: -80px;
 }
 .validation i {
   background-color: #fff;
   color: #99E2D0;
-  padding: 3px 3px 1px 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
+  padding: 4px 3px 1px;
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  background-color: #fff;
+  font-weight: 900;
 }
 
 h2 {
@@ -462,33 +564,25 @@ h2 {
 
 h3 {
   padding-bottom: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .space_b {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.price {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-;
-  font-weight: 900;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .order {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
-  margin-top: 40px;
-}
-
-.order_button {
-  width: 45%;
+  position: relative;
+  margin: 25%;
+  width: 50%;
   border: transparent;
   border-radius: 30px;
   padding: 15px;
@@ -496,6 +590,12 @@ h3 {
   font-weight: bold;
   background-color: #9356DC;
   background-image: linear-gradient(-5deg, #9356DC, #FF79DA);
+  box-shadow: 3px 3px 10px rgba(23, 23, 23, 0.3);
+  cursor: pointer;
+}
+.order:hover {
+  box-shadow: 4px 4px 10px rgba(23, 23, 23, 0.4);
+  filter: brightness(1.05);
 }
 
 /* --- footer --- */

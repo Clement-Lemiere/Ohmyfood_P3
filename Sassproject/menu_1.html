@@ -14,161 +14,166 @@
     </head>
 
     <body>
+        <div class="loader"></div>
         <header>
-            <a href="#" title="logo">
+            <a href="index.html" title="logo">
                 <i class="fa-solid fa-arrow-left bold"></i>
                 <span class="header_logo">
                     ohmyfood
                 </span>
             </a>
         </header>
+        
         <main>
             <img src="assets/la_francaise.jpg" alt="à la francaise">
             <section class="menu_bg">
                 <h1>
-                    <span class="bold">À la française</span>
-                    <i class="fa-regular fa-heart"></i>
+                    <div class="bold">À la française</div>
+                    <button class="favorite">
+                        <i class="fa-regular fa-heart empty_heart"></i>
+                        <i class="fa-solid fa-heart full_heart"></i>
+                    </button>
                 </h1>
-                <ul>
+                <form>
                     <h2>entrées</h2>
-                    <label class="container" for="entree 1">
-                        <li>
-                            <input type="radio" id="entree 1" name="entrée" value="1">
-                            <div class="description">
-                                <h3>Tartare de poulpe acidulé</h3>                           
-                                <span class="space_b">
-                                    Aux zestes d'orange
-                                    <span class="price">25€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="entree 1">                        
+                        <input type="radio" id="entree 1" name="entrée" value="1">                        
+                        <div class="description">
+                            <h3>Tartare de poulpe acidulé</h3>                           
+                            <span class="space_b">
+                                Aux zestes d'orange                                    
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">25€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                    <label class="container" for="entree 2">
-                        <li>
-                            <input type="radio" id="entree 2" name="entrée" value="2">
-                                <div class="description">
-                                    <h3>Velouté de légumes d'antan</h3>
-                                    <span class="space_b">
-                                        Carotte, panais, topinambour
-                                        <span class="price">35€</span>
-                                    </span>
-                                </div>
-                                <div class="validation">
-                                    <i class="fa-solid fa-check"></i>
-                                </div>
-                        </li>
+                    <label class="container" for="entree 2">                        
+                        <input type="radio" id="entree 2" name="entrée" value="2">
+                        <div class="description">
+                            <h3>Velouté de légumes d'antan</h3>
+                            <span class="space_b">
+                                Carotte, panais, topinambour
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">35€</span>                        
+                            <span class="validation">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </div>
                     </label>
-                    <label class="container" for="entree 3">
-                        <li>
-                            <input type="radio" id="entree 3" name="entrée" value="3">
-                                <div class="description">
-                                    <h3>Soupe à l'oignon</h3>
-                                    <span class="space_b">Revisité
-                                        <span class="price">20€</span>
-                                    </span>
-                                </div>
-                                <div class="validation">
-                                    <i class="fa-solid fa-check"></i>
-                                </div>
-                        </li>
+                    <label class="container" for="entree 3">                        
+                        <input type="radio" id="entree 3" name="entrée" value="3">
+                        <div class="description">
+                            <h3>Soupe à l'oignon</h3>
+                            <span class="space_b">Revisité
+                            </span>
+                        </div>                            
+                        <div class="bloc">
+                            <span class="price">20€</span>                        
+                            <span class="validation">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </div>
                     </label>
-                </ul>
-                <ul>
+                </form>
+                <form>
                     <h2>plats</h2>
-                    <label class="container" for="plat 1">
-                        <li>
-                            <input type="radio" id="plat 1" name="plat" value="1">
-                            <div class="description">
-                                <h3>Coquilles Saint-Jacques</h3>                           
-                                <span class="space_b">Accompagnée d'une purée de panais
-                                    <span class="price">40€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="plat 1">                        
+                        <input type="radio" id="plat 1" name="plat" value="1">
+                        <div class="description">
+                            <h3>Coquilles Saint-Jacques</h3>                           
+                            <span class="space_b">Accompagnée d'une purée de panais
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">40€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                    <label class="container" for="plat 2">
-                        <li>
-                            <input type="radio" id="plat 2" name="plat" value="2">
-                            <div class="description">
-                                <h3>Magret de canard</h3>
-                                <span class="space_b">Et parmentier de pommes de terres
-                                    <span class="price">35€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="plat 2">                        
+                        <input type="radio" id="plat 2" name="plat" value="2">
+                        <div class="description">
+                            <h3>Magret de canard</h3>
+                            <span class="space_b">Et parmentier de pommes de terres
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">35€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                    <label class="container" for="plat 3">
-                        <li>
-                            <input type="radio" id="plat 3" name="plat" value="3">
-                            <div class="description">
-                                <h3>Pigeonneau d'Ille-et-Vilaine</h3>
-                                <span class="space_b">Sur son lit de gnocchis aux légumes
-                                    <span class="price">44€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="plat 3">                        
+                        <input type="radio" id="plat 3" name="plat" value="3">
+                        <div class="description">
+                            <h3>Pigeonneau d'Ille-et-Vilaine</h3>
+                            <span class="space_b">Sur son lit de gnocchis aux légumes
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">44€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                </ul>
-                <ul>
+                </form>
+                <form>
                     <h2>desserts</h2>
-                    <label class="container" for="dessert 1">
-                        <li>
-                            <input type="radio" id="dessert 1" name="dessert" value="1">
-                            <div class="description">
-                                <h3>Pétales de violettes glacés</h3>                           
-                                <span class="space_b">Et purée de noisettes
-                                    <span class="price">18€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="dessert 1">                        
+                        <input type="radio" id="dessert 1" name="dessert" value="1">
+                        <div class="description">
+                            <h3>Pétales de violettes glacés</h3>                           
+                            <span class="space_b">Et purée de noisettes
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">18€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                    <label class="container" for="dessert 2">
-                        <li>
-                            <input type="radio" id="dessert 2" name="dessert" value="2">
-                            <div class="description">
-                                <h3>Fondant au chocolat</h3>
-                                <span class="space_b">Revisité
-                                    <span class="price">22€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="dessert 2">                        
+                        <input type="radio" id="dessert 2" name="dessert" value="2">
+                        <div class="description">
+                            <h3>Fondant au chocolat</h3>
+                            <span class="space_b">Revisité
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">22€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                    <label class="container" for="dessert 3">
-                        <li>
-                            <input type="radio" id="dessert 3" name="dessert" value="3">
-                            <div class="description">
-                                <h3>Millefeuille croustillant</h3>
-                                <span class="space_b">Myrtilles et pâte d'amande
-                                    <span class="price">23€</span>
-                                </span>
-                            </div>
-                            <div class="validation">
+                    <label class="container" for="dessert 3">                        
+                        <input type="radio" id="dessert 3" name="dessert" value="3">
+                        <div class="description">
+                            <h3>Millefeuille croustillant</h3>
+                            <span class="space_b">Myrtilles et pâte d'amande
+                            </span>
+                        </div>
+                        <div class="bloc">
+                            <span class="price">23€</span>                        
+                            <span class="validation">
                                 <i class="fa-solid fa-check"></i>
-                            </div>
-                        </li>
+                            </span>
+                        </div>
                     </label>
-                </ul>
-                <a href="#" title="order" class="order">
-                    <input type="submit" value="Commander" class="order_button"/>
-                </a>
+                </form>
+                <div class="order">
+                    Commander
+                </div>
             </section>
             
         </main>

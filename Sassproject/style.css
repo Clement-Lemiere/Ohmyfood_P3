@@ -337,6 +337,24 @@ template {
   display: none;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -348,6 +366,41 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.loader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #ffffff;
+  height: 100%;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 250ms 2.1s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: "";
+  height: 130px;
+  width: 130px;
+  border-top: 5px solid #9356DC;
+  border-bottom: 5px solid #FF79DA;
+  border-radius: 50%;
+  animation: spin 0.7s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 a {
   color: black;
   text-decoration: none;
@@ -488,6 +541,7 @@ h2 {
 }
 
 .cards_frame {
+  position: relative;
   border: transparent;
   background-color: white;
   display: block;
@@ -495,7 +549,6 @@ h2 {
   box-shadow: 3px 3px 10px rgba(23, 23, 23, 0.3);
   overflow: hidden;
   margin: 10px 0;
-  position: relative;
 }
 .cards_frame input:hover {
   box-shadow: 7px 7px 10px rgba(23, 23, 23, 0.3);
@@ -505,12 +558,13 @@ h2 {
 .card_shape {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 180px;
 }
 .card_shape img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  padding-bottom: 20px;
 }
 
 .card_description {
@@ -527,6 +581,9 @@ h2 {
   flex-direction: column;
   padding: 10px 5px;
 }
+.card_text span {
+  padding: 3px 0;
+}
 
 .favorite {
   display: flex;
@@ -534,26 +591,32 @@ h2 {
   background-color: #fff;
   border: none;
   font-size: 25px;
+  position: relative;
+  cursor: pointer;
+}
+.favorite .empty_heart {
+  position: absolute;
+  right: 25px;
+  bottom: 35px;
+}
+.favorite .empty_heart:hover {
+  opacity: 0;
 }
 .favorite .full_heart {
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  right: 24px;
+  bottom: 34px;
+  font-size: 27px;
   opacity: 0;
-  color: #FF79DA;
+  background-color: #9356DC;
+  background-image: linear-gradient(220deg, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   transition: opacity 0.4s;
 }
 .favorite .full_heart:hover {
   opacity: 1;
-}
-
-.empty_heart {
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-}
-.empty_heart:hover {
-  opacity: 0;
 }
 
 .new {
